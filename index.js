@@ -102,21 +102,7 @@ function createPath(item) {
           }
         }
       },
-      '400': {
-        description: "Invalid input",
-        content: {
-          "application/json": {
-            schema: {
-              type: "object",
-              properties: {
-                err: {
-                  type: "string"
-                }
-              }
-            }
-          }
-        }
-      }
+      '400': config.defaultError
     }
   }
 
