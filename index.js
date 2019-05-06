@@ -1,6 +1,12 @@
 const fs = require('fs')
 
-const insomnia = JSON.parse(fs.readFileSync('insomnia.json').toString('utf-8'))
+if (process.argv.length < 3) {
+  console.error("Error: you must supply an input file")
+  console.error("Usage: node index.js [filename.js]")
+  process.exit(1)
+}
+const insomniaFile = process.argv[2];
+const insomnia = JSON.parse(fs.readFileSync(insomniaFile).toString('utf-8'))
 const config = JSON.parse(fs.readFileSync('config.json').toString('utf-8'))
 
 // set our base content
